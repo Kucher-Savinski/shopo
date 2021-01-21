@@ -1,3 +1,4 @@
+import { ProductService } from './../shared/product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +6,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
+
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private productService : ProductService
+  ) { }
+
+    product$;
 
   ngOnInit() {
+    this.product$ = this.productService.getAll();
   }
 
 }
