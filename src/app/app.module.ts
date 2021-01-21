@@ -9,6 +9,7 @@ import { MainLayoutComponent } from './common/shared/main-layout/main-layout.com
 import { MainPageComponent } from './common/main-page/main-page.component';
 import { ProductPageComponent } from './common/product-page/product-page.component';
 import { CartPageComponent } from './common/cart-page/cart-page.component';
+import { ProductComponent } from './common/product/product.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CartPageComponent } from './common/cart-page/cart-page.component';
     MainLayoutComponent,
     MainPageComponent,
     ProductPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
