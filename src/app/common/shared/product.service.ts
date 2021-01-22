@@ -45,4 +45,8 @@ export class ProductService {
     }
     ));
   }
+
+  remove(id) {
+    return this.http.delete(`${environment.DBurl}/products/${id}.json`)
+  }
 }

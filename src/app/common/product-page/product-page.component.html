@@ -1,4 +1,4 @@
-<div *ngIf = "product$ as product">
+<div *ngIf = "product$ | async as product; else loading">
     <div class = "product">
         <div class = "header right">
             <button routerLink = "/" class = "btn btn-dark">Back</button>
@@ -6,23 +6,27 @@
 
         <div class = "flex">
             <div class="item text-center">
-                <h2>{{product.title}}</h2>
+                <h2>{{product$.title}}</h2>
 
                 <div>
-                <img [src] = "product.photo">
+                <img [src] = "product$.photo">
                 </div>
 
                 <div>
-                    <h2>Price: {{product.price}} $</h2>
+                    <h2>Price: {{product$.price}} $</h2>
                 </div>
             </div>
 
             <div class = "item">
                 <h2>Description</h2>
                 <div>
-                    {{product.info}}
+                    {{product$.info}}
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<ng-template #loading>
+    <p class = "text-center">Loading...</p>
+</ng-template>
