@@ -10,6 +10,8 @@ import { MainPageComponent } from './common/main-page/main-page.component';
 import { ProductPageComponent } from './common/product-page/product-page.component';
 import { CartPageComponent } from './common/cart-page/cart-page.component';
 import { ProductComponent } from './common/product/product.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { ProductComponent } from './common/product/product.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     {

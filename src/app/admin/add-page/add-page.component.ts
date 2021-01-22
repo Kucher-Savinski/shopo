@@ -33,7 +33,6 @@ export class AddPageComponent implements OnInit {
     };
 
     this.router.navigate(['/admin', 'orders']);
-    console.log(this.myform);
     this.productService.create(product).subscribe( r => console.log(r));
 
   }

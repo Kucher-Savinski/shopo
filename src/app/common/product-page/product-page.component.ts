@@ -1,7 +1,7 @@
 import { ProductService } from './../shared/product.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-page',
@@ -19,8 +19,8 @@ export class ProductPageComponent implements OnInit {
 
   ngOnInit() {
     this.product$ = this.route.params
-    .pipe( switchMap( params => {
-      return this.productServ.getbyId(params['id']);
+    .pipe( map( params => {
+      return this.productServ.getbyId(params.id);
     }));
   }
 
